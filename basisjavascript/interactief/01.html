@@ -3,94 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Binturong Liker</title>
-    <!--<link rel="stylesheet" href="01.css">-->
-    <style>
-        body {
-            font-family: 'Copse', serif;
-            text-align: center;
-        }
-        div.picture-holder{
-            box-sizing: border-box;
-            height: 450px;
-            width: 300px;
-            float: left;
-            border: solid 1px black;
-        }
-
-        div.favoriet {
-            width: 300px;
-            height: 150px;
-            background-image: none;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        #pics {
-            width: 900px;
-            height: 1350px;
-            border: solid 1px black;
-            font-size: 0px;
-            margin: auto;
-        }
-
-    </style>
+    <link rel="stylesheet" href="01.css">
 </head>
 <body>
 <h1>Binturongchooser</h1>
 <h3>Choose your favorite binturong!</h3>
 <div id="pics">
-
 </div>
-<script>
-pics = document.getElementById("pics");
-createPicsHolders ();
-createBinturongImages();
-
-function createPicsHolders() {
-    for(var i = 0; i < 9; i++) {
-        pictureHolder = document.createElement("div");
-        pictureHolder.className = "picture-holder";
-        pictureHolder.id = "picture-holder-" +i;
-        pics.appendChild(pictureHolder);
-    }
-}
-
-function createBinturongImages(){
-    pictureHolders = document.getElementsByClassName("picture-holder");
-    for(var i = 0; i < pictureHolders.length; i++){
-        favoriet = document.createElement("div");
-        favoriet.className = "favoriet";
-        favoriet.id = "favoriet_" + (i+1);
-        binturongPlaatje = document.createElement("img");
-        binturongPlaatje.src = "../../img/Binturong" + (i+1) + ".jpg";
-        binturongPlaatje.id = (i+1);
-        binturongPlaatje.addEventListener("click", function () {
-            maakFavoriet(this.id);
-        });
-        pictureHolders[i].appendChild(favoriet);
-        pictureHolders[i].appendChild(binturongPlaatje);
-    }
-}
-
-function  maakFavoriet(id) {
-    console.log("Maak mij favoriet! Het gaat om binturong..." + id );
-    notsofavoriet = document.getElementsByClassName("favoriet");
-
-    for(var i = 0; i < notsofavoriet.length; i++){
-        notsofavoriet[i].style.backgroundImage = "none";
-    }
-
-    favoriet = document.getElementById("favoriet_" + id);
-    favoriet.style.backgroundImage = "url('../../img/heart.png')";
-}
-
-//picsHolders maken
-//picsHolders bevat een plaatje van een app en een favorite symbool (hartje)
-
-    //aPlaatjes toevoegen aan picsHolders
-    //favoriteSymbols toevoegen aan picsHolders
-</script>
-
-<!--<script src="01.js"></script>-->
+<script src="01.js"></script>
 </body>
 </html>
